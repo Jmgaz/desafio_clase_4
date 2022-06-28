@@ -15,9 +15,24 @@ const ROLL7= new Rolls(4,"Langos, Ome, Queso", 704);
 const ROLL8= new Rolls(4,"Langos, Palta, Queso", 749);
 const ROLL9= new Rolls(4,"Langos, Ome, Palta, Queso", 789);
 
+const arrayRolls= []
+
+arrayRolls.push(ROLL1)
+arrayRolls.push(ROLL2)
+arrayRolls.push(ROLL3)
+arrayRolls.push(ROLL4)
+arrayRolls.push(ROLL5)
+arrayRolls.push(ROLL6)
+arrayRolls.push(ROLL7)
+arrayRolls.push(ROLL8)
+arrayRolls.push(ROLL9)
+
+
+alert("tenemos " + arrayRolls.length + " variedades de Rolls")
+
 
 while(true){
-    let opcion = parseInt(prompt("Ingresá un número del 1 al 9 para conocer nuestros rolls y sus precios. Para finalizar ingresá el número 10."));
+    let opcion = parseInt(prompt("Ingresá un número del 1 al " + arrayRolls.length + " para conocer cada uno de ellos y sus precios. Para finalizar ingresá el número 0."));
     let costo = 0
     if(opcion == 1){
         costo = ROLL1.precio;
@@ -46,7 +61,7 @@ while(true){
     }else if(opcion == 9){
         costo = ROLL9.precio;
         alert("Las " + ROLL9.cantidad + " piezas de " + ROLL9.ingredientes + " cuestan: $ " + costo / 2)
-    }else if(opcion == 10){
+    }else if(opcion == 0){
         break;
     }else{
         alert("Opción incorrecta")
